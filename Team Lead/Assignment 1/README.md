@@ -1,2 +1,3 @@
 Assignment 1
-Create the simple webpage like resume
+Develop a sample homepage with html,css which should include banner,image and description about yourself just like your resume. 
+
