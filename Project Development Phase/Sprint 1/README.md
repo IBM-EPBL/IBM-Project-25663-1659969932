@@ -1,12 +1,11 @@
-# CONNECTED WITH IBM DB
 
-# FLASK WITH IBM-DB2-DATABASE
+#  login and register page 
+
+# CONNECTED WITH IBM DB login and register page 
+
+
 
 Working with IBM Db2 service 
-
-> Install Necessary Packages
-
-> Add the connection details from IBM DB2 as show under Service credentials of Portal
 
 --- ADD IT IN YOUR PYTHON APP ---
 > import ibm_db
@@ -15,9 +14,6 @@ Working with IBM Db2 service
 > print(conn)
 > print("connection successful...")
 
-----------
-
-> Download SSL Certificate form setting pages of IBM DB2
 
 Open the application
 
