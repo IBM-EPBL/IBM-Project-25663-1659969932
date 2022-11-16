@@ -1,0 +1,22 @@
+<table border="1">
+    <thead>
+      <tr>
+          <th>USERNAME</th>
+          <th>EMAIL ADDRESS</th>
+          <th>TICKETS ALLOTED</th>
+          <th>TICKETS RESOLVED</th>
+          <th>ASSIGN TICKET</th>
+        </tr>
+  </thead>
+  <tbody>
+      {% for row in agents %}
+      <tr>
+         <td>{{row["cname"]}}</td>
+         <td> {{row["cemail"]}}</td>
+         <td>{{row["cidentity"]}}</td>
+         <td>{{row["AGENTTICKETSRESOLVED"]}}</td>
+         <td><a href="/assignTicketsAdmin/{{ticketid}}/{{row['AGENTUSERNAME']}}">Assign</a></td>
+      </tr>
+   {% endfor %}
+  </tbody>
+  </table>
