@@ -1,0 +1,55 @@
+<html>
+    <body style="background-color: rgb(221, 149, 221); align-content: center;text-align: center;">
+        
+    <a href="/">HOME</a>
+<a href="/addstudent">Add New Student</a>
+<a href="/list">List Student</a>
+<hr>
+
+
+<form action = "{{ url_for('addrec') }}"  method = "POST" onsubmit="SendEmail();reset(); return false;" style="text-align: center;">
+    <h3>Student Information</h3>
+    Name<br>
+    <input type = "text" name="name" /></br>
+    
+    Address<br>
+    <textarea name="address" ></textarea><br>
+    
+    City<br>
+    <input type = "text" name="city" /><br>
+    
+    Query<br>
+    <input type = "text" name="pin" /><br><br>
+    billno<br>
+    <input type = "text" name="cid" /><br><br>
+
+    Email<br>
+    <input type="email" name="email" class="cemail"/><br>
+    
+    <input type = "submit" value = "submit" /><br>
+ </form>
+ <script>
+    console.log("Successfully inserted");
+ </script>
+ 
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<script>
+    const email=document.querySelector('.cemail');
+    function SendEmail(){
+Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "tasleemrahim09@gmail.com",
+    Password : "6E80DFC8BACD2CCCEF22FABD8708B376D165",
+    To : email.value,
+    From : "svce2019@gmail.com",
+    Subject : "Query has been raised",
+    Body : "We have received your issue, will process and solve the issue... Thanks for your Patience!!"
+
+}).then(
+  message => alert(message)
+);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+   <body style="background-color: rgb(221, 149, 221); align-content: center;text-align: center;">
+
+    <a href="/">HOME</a>
+    <a href="/addstudent">Add New Student</a>
+    <a href="/list">List Student</a>
+    <br><hr>
+
+    {{ msg }}
+
+      <table border = 1 style="text-align: center;  align-content: center;">
+         <thead style="text-align: center;  align-content: center;">
+            <td>Name</td>
+            <td>Address</td>
+            <td>Query</td>
+            <td>city</td>
+            <td></td>
+            <td></td>
+         </thead>
+         {% for row in students %}
+            <tr style="text-align: center;  align-content: center;">
+               <td>{{row["NAME"]}}</td>
+               <td> {{ row["ADDRESS"]}}</td>
+               <td>{{row["CITY"]}}</td>
+               <td>{{row["Query"]}}</td>	
+             
+               <td><button  onsubmit="SendEmail();reset(); return false;"><a href="/deletes/{{row['NAME']}}" onsubmit="SendEmail();reset(); return false;">solved</a></button></td>
+               
+            </tr>
+         {% endfor %}
+      </table>
+      <script src="https://smtpjs.com/v3/smtp.js">
+      </script>
+      <script>
+         
+          function SendEmail(){
+      Email.send({
+          Host : "smtp.elasticemail.com",
+          Username : "tasleemrahim09@gmail.com",
+          Password : "6E80DFC8BACD2CCCEF22FABD8708B376D165",
+          To : "2019it0238@svce.ac.in",
+          From : "svce2019@gmail.com",
+          Subject : "Query has been raised",
+    Body : "We have received your issue, will process and solve the issue... Thanks for your Patience!!"
+
+      }).then(
+        message => alert(message)
+      );
+          }
+      </script>
+
+   </body>
+</html>
